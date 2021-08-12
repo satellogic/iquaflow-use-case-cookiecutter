@@ -18,8 +18,8 @@ $ conda install cookiecutter
 
 ### To start a new project, run:
 ------------
-
-    cookiecutter git+ssh://git@publicgitlab.satellogic.com/iqf/use-cases/cookiecutter-iqf-use-case
+	git clone https://gitlab+deploy-token-37:TyK24S-Dfso92GHnUds2@publicgitlab.satellogic.com/iqf/use-cases/cookiecutter-iqf-use-case.git
+	cookiecutter cookiecutter-iqf-use-case 
 
 ### Installing development requirements
 ------------
