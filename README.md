@@ -1,4 +1,9 @@
-# Cookiecutter for AI projects
+# Cookiecutter for IQF use cases
+
+## To start a new project, run:
+------------
+	git clone https://gitlab+deploy-token-37:TyK24S-Dfso92GHnUds2@publicgitlab.satellogic.com/iqf/use-cases/cookiecutter-iqf-use-case.git
+	cookiecutter cookiecutter-iqf-use-case 
 
 ### Requirements to use the cookiecutter template:
 -----------
@@ -15,12 +20,6 @@ or
 $ conda config --add channels conda-forge
 $ conda install cookiecutter
 ```
-
-### To start a new project, run:
-------------
-	git clone https://gitlab+deploy-token-37:TyK24S-Dfso92GHnUds2@publicgitlab.satellogic.com/iqf/use-cases/cookiecutter-iqf-use-case.git
-	cookiecutter cookiecutter-iqf-use-case 
-
 ### Installing development requirements
 ------------
 
