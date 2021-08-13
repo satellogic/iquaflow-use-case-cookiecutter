@@ -1,6 +1,6 @@
 
 
-PROJECT_NAME={{ cookiecutter.repo_name }}
+PROJ_NAME={{ cookiecutter.repo_name }}
 CONTAINER_NAME="${PROJ_NAME}-${USER}"
 
 
@@ -16,12 +16,14 @@ ifndef MLF_PORT
 	MLF_PORT=5000
 endif
 
-
 help:
 	@echo "build -- builds the docker image"
+	@echo "dockershell -- raises an interactive shell docker"
+	@echo "notebookshell -- launches a notebook server"
+	@echo "mlflow -- launches an mlflow server"
 
 build:
-	docker build -t $(PROJECT_NAME) .
+	docker build -t $(PROJ_NAME) .
 	chmod 775 ./download.sh
 	./download.sh
 
@@ -29,13 +31,13 @@ dockershell:
 	docker run --rm --name $(CONTAINER_NAME) --gpus all \
 	-p 9197:9197 \
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
-	-it $(PROJECT_NAME)
+	-it $(PROJ_NAME)
 
 notebookshell:
 	docker run --gpus all --privileged -itd --rm --name $(CONTAINER_NAME)-nb \
 	-p ${NB_PORT}:${NB_PORT} \
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
-	$(PROJECT_NAME) \
+	$(PROJ_NAME) \
 	jupyter notebook \
 	--NotebookApp.token='IQF' \
 	--no-browser \
