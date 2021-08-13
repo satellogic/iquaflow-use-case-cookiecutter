@@ -1,7 +1,7 @@
 
 
 PROJECT_NAME={{ cookiecutter.repo_name }}
-CONTAINER_NAME="${PROJECT_NAME:0:7}-${USER:0:7}-$(docker ps -q | wc -l)"
+CONTAINER_NAME="${PROJ_NAME}-${USER}"
 
 
 ifndef DS_VOLUME
