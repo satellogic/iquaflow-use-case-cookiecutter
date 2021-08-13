@@ -32,7 +32,7 @@ dockershell:
 	-it $(PROJECT_NAME)
 
 notebookshell:
-	docker run --gpus all --privileged -itd --rm --name $(CONTAINER_NAME) \
+	docker run --gpus all --privileged -itd --rm --name $(CONTAINER_NAME)-nb \
 	-p ${NB_PORT}:${NB_PORT} \
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
 	$(PROJECT_NAME) \
@@ -44,7 +44,7 @@ notebookshell:
 	--port=${NB_PORT}
 
 mlflow:
-	docker run --privileged -itd --rm --name $(CONTAINER_NAME) \
+	docker run --privileged -itd --rm --name $(CONTAINER_NAME)-mlf \
 	-p ${MLF_PORT}:${MLF_PORT} \
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
 	$(PROJECT_NAME) \
