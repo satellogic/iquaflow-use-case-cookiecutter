@@ -1,5 +1,9 @@
 
 
+PROJECT_NAME={{ cookiecutter.repo_name }}
+CONTAINER_NAME="${PROJECT_NAME:0:7}-${USER:0:7}-$(docker ps -q | wc -l)"
+
+
 ifndef DS_VOLUME
 	DS_VOLUME=/scratch
 endif
@@ -12,8 +16,6 @@ ifndef MLF_PORT
 	MLF_PORT=5000
 endif
 
-PROJECT_NAME={{ cookiecutter.repo_name }}
-CONTAINER_NAME="${PROJECT_NAME:0:7}-${USER:0:7}-$(docker ps -q | wc -l)"
 
 help:
 	@echo "build -- builds the docker image"
