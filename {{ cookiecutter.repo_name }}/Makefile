@@ -1,5 +1,4 @@
 
-PROJECT_NAME = {{ cookiecutter.repo_name }}
 
 ifndef DS_VOLUME
 	DS_VOLUME=/scratch
@@ -13,6 +12,9 @@ ifndef MLF_PORT
 	MLF_PORT=5000
 endif
 
+PROJECT_NAME={{ cookiecutter.repo_name }}
+CONTAINER_NAME="${PROJECT_NAME:0:7}-${USER:0:7}-$(docker ps -q | wc -l)"
+
 help:
 	@echo "build -- builds the docker image"
 
@@ -22,12 +24,14 @@ build:
 	./download.sh
 
 dockershell:
-	docker run --rm --name $(PROJECT_NAME) --gpus all -p 9197:9197 \
+	docker run --rm --name $(CONTAINER_NAME) --gpus all \
+	-p 9197:9197 \
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
 	-it $(PROJECT_NAME)
 
 notebookshell:
-	docker run --gpus all --privileged -itd --rm -p ${NB_PORT}:${NB_PORT} \
+	docker run --gpus all --privileged -itd --rm --name $(CONTAINER_NAME) \
+	-p ${NB_PORT}:${NB_PORT} \
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
 	$(PROJECT_NAME) \
 	jupyter notebook \
@@ -38,7 +42,8 @@ notebookshell:
 	--port=${NB_PORT}
 
 mlflow:
-	docker run --privileged -itd --rm -p ${MLF_PORT}:${MLF_PORT} \
+	docker run --privileged -itd --rm --name $(CONTAINER_NAME) \
+	-p ${MLF_PORT}:${MLF_PORT} \
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
 	$(PROJECT_NAME) \
 	mlflow ui --host 0.0.0.0:$(MLF_PORT)
