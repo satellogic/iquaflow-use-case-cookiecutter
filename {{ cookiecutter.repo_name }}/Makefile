@@ -1,5 +1,4 @@
 
-
 PROJ_NAME={{ cookiecutter.repo_name }}
 CONTAINER_NAME="${PROJ_NAME}-${USER}"
 
@@ -21,6 +20,7 @@ help:
 	@echo "dockershell -- raises an interactive shell docker"
 	@echo "notebookshell -- launches a notebook server"
 	@echo "mlflow -- launches an mlflow server"
+	@echo "downloads course materials"
 
 build:
 	docker build -t $(PROJ_NAME) .
@@ -51,3 +51,7 @@ mlflow:
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
 	$(PROJECT_NAME) \
 	mlflow ui --host 0.0.0.0:$(MLF_PORT)
+
+course:
+	wget https://image-quality-framework.s3.eu-west-1.amazonaws.com/iq-tool-box/datasets/course.zip
+	chmod 775 ./course.zip && unzip ./course.zip
