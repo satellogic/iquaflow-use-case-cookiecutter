@@ -10,7 +10,7 @@ ENV PATH=$CONDA_DIR/bin:$PATH
 
 RUN echo ". $CONDA_DIR/etc/profile.d/conda.sh" >> ~/.profile
 RUN apt update 
-RUN apt install wget 
+RUN apt -y install wget 
 RUN apt -y install git
 RUN apt install libglib2.0-0 -y 
 RUN apt install libgl1-mesa-glx -y 
