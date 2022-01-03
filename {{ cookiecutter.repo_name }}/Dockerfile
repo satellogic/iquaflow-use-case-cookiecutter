@@ -15,7 +15,6 @@ RUN apt -y install wget
 RUN apt -y install git
 RUN apt install libglib2.0-0 -y 
 RUN apt install libgl1-mesa-glx -y 
-RUN apt install make -y 
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
 RUN chmod 775 Miniconda3-latest-Linux-x86_64.sh 
 RUN bash Miniconda3-latest-Linux-x86_64.sh -b -p $CONDA_DIR 
