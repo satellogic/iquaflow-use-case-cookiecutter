@@ -9,7 +9,8 @@ ENV CONDA_DIR $HOME/miniconda3
 ENV PATH=$CONDA_DIR/bin:$PATH
 
 RUN echo ". $CONDA_DIR/etc/profile.d/conda.sh" >> ~/.profile
-RUN apt update 
+RUN apt update
+RUN apt -y install gcc
 RUN apt -y install wget 
 RUN apt -y install git
 RUN apt install libglib2.0-0 -y 
