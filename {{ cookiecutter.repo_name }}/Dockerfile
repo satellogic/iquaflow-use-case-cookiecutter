@@ -34,6 +34,9 @@ RUN conda run -n satellogic pip3 install git+https://gitlab+deploy-token-45:FKSA
 
 RUN conda run -n satellogic pip3 install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
 
+RUN conda run -n satellogic pip3 install notebook
+RUN conda run -n satellogic pip3 install jupyterlab
+
 CMD ["/bin/bash", "-c", "source activate satellogic && /bin/bash"]
 
 
