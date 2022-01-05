@@ -1,5 +1,6 @@
 import os
 
+from iq_tool_box.datasets import DSWrapper
 from iq_tool_box.experiments import ExperimentInfo, ExperimentSetup
 from iq_tool_box.experiments.task_execution import PythonScriptTaskExecution
 
