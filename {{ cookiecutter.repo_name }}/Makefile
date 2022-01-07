@@ -49,7 +49,7 @@ mlflow:
 	-p ${MLF_PORT}:${MLF_PORT} \
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
 	$(PROJ_NAME) \
-	mlflow ui --host 0.0.0.0:$(MLF_PORT)
+	/miniconda3/envs/satellogic/bin/mlflow ui --host 0.0.0.0:$(MLF_PORT)
 
 course:
 	wget https://image-quality-framework.s3.eu-west-1.amazonaws.com/iq-tool-box/datasets/course.zip
