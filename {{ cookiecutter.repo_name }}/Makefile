@@ -48,7 +48,7 @@ mlflow:
 	docker run --privileged -itd --rm --name $(CONTAINER_NAME)-mlf \
 	-p ${MLF_PORT}:${MLF_PORT} \
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
-	$(PROJECT_NAME) \
+	$(PROJ_NAME) \
 	mlflow ui --host 0.0.0.0:$(MLF_PORT)
 
 course:
