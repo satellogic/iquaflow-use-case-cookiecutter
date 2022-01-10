@@ -7,20 +7,20 @@ ENV PATH=/usr/local/nvidia/bin:$PATH
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
-RUN apt-get update && apt-get install -y --no-install-recommends software-properties-common \
+RUN apt update && apt install -y --no-install-recommends software-properties-common \
     libsm6 libxext6 libxrender-dev curl \
     && rm -rf /var/lib/apt/lists/*
 
 RUN echo "**** Installing Python ****" && \
     add-apt-repository -y ppa:deadsnakes/ppa &&  \
-    apt-get install -y build-essential python3.6 python3.6-dev python3-pip && \
+    apt install -y build-essential python3.6 python3.6-dev python3-pip && \
     curl -O https://bootstrap.pypa.io/get-pip.py && \
     python3.6 get-pip.py && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update &&  \
-    apt-get install -y curl wget unzip git \
-    apt-get install -y ffmpeg libsm6 libxext6 libglib2.0-0 libgl1-mesa-glx
+RUN apt update
+RUN apt install -y wget unzip git
+RUN apt install -y ffmpeg libglib2.0-0 libgl1-mesa-glx
 
 RUN echo 'alias pip=pip3.6' >> ~/.bashrc
 RUN echo 'alias pip3=pip3.6' >> ~/.bashrc
