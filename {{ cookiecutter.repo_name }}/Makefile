@@ -37,7 +37,7 @@ notebookshell:
 	-p ${NB_PORT}:${NB_PORT} \
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
 	$(PROJ_NAME) \
-	conda run -n satellogic jupyter lab \
+	jupyter lab \
 	--NotebookApp.token='IQF' \
 	--no-browser \
 	--ip=0.0.0.0 \
