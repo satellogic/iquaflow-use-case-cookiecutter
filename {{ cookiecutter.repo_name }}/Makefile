@@ -53,4 +53,4 @@ mlflow:
 
 course:
 	wget https://image-quality-framework.s3.eu-west-1.amazonaws.com/iq-tool-box/datasets/course.zip
-	chmod 775 ./course.zip && unzip ./course.zip
+	chmod 775 ./course.zip && unzip -o ./course.zip && rm ./course.zip
