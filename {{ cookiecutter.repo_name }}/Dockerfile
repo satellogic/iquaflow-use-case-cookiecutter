@@ -16,13 +16,11 @@ RUN echo "**** Installing Python ****" && \
     apt-get install -y build-essential python3.6 python3.6-dev python3-pip && \
     curl -O https://bootstrap.pypa.io/get-pip.py && \
     python3.6 get-pip.py && \
-    rm -rf /var/lib/apt/lists/* && \
-    alias python3=python3.6
+    rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update &&  \
-    apt-get install -y \
-    curl unzip wget git \
-    ffmpeg libsm6 libxext6 libglib2.0-0 libgl1-mesa-glx
+    apt-get install -y curl wget unzip git \
+    apt-get install -y ffmpeg libsm6 libxext6 libglib2.0-0 libgl1-mesa-glx
 
 RUN echo 'alias pip=pip3.6' >> ~/.bashrc
 RUN echo 'alias pip3=pip3.6' >> ~/.bashrc
