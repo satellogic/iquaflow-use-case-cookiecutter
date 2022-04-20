@@ -14,7 +14,7 @@ RUN apt update && apt install -y --no-install-recommends software-properties-com
 RUN echo "**** Installing Python ****" && \
     add-apt-repository -y ppa:deadsnakes/ppa &&  \
     apt install -y build-essential python3.6 python3.6-dev python3-pip && \
-    curl -O https://bootstrap.pypa.io/get-pip.py && \
+    curl -O https://bootstrap.pypa.io/pip/3.6/get-pip.py && \
     python3.6 get-pip.py && \
     rm -rf /var/lib/apt/lists/*
 
@@ -36,7 +36,7 @@ COPY ./requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
 # Install IQF in the project
-RUN pip3 install git+https://gitlab+deploy-token-45:FKSA3HpmgUoxa5RZ69Cf@publicgitlab.satellogic.com/iqf/iq_tool_box-
+RUN pip3 install git+https://gitlab+deploy-token-45:FKSA3HpmgUoxa5RZ69Cf@git.satellogic.team/iqf/iq_tool_box-
 
 # Force a suitable torch version given your hardware
 # RUN pip3 install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
