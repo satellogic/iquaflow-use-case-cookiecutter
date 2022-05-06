@@ -2,8 +2,16 @@
 
 ## To start a new project, run:
 ------------
-	git clone https://gitlab+deploy-token-37:TyK24S-Dfso92GHnUds2@publicgitlab.satellogic.com/iqf/use-cases/cookiecutter-iqf-use-case.git
-	cookiecutter cookiecutter-iqf-use-case 
+``` bash
+cookiecutter git@github.com:satellogic/iquaflow-use-case-cookiecutter.git
+``` 
+
+or
+
+``` bash
+git clone git@github.com:satellogic/iquaflow-use-case-cookiecutter.git
+cookiecutter iquaflow-use-case-cookiecutter
+``` 
 
 ### Requirements to use the cookiecutter template:
 -----------
@@ -22,10 +30,11 @@ $ conda install cookiecutter
 ```
 ### Installing development requirements
 ------------
-
-    pip install -r requirements.txt
-
+``` bash
+pip install -r requirements.txt
+```
 ### Running the tests
 ------------
-
-    py.test tests
+``` bash
+py.test tests
+```

@@ -22,7 +22,7 @@ help:
 	@echo "downloads course materials"
 
 build:
-	docker build -t $(PROJ_NAME) .
+	docker build --build-arg GITHUB_USER=$(GITHUB_USER) --build-arg GITHUB_PASS=$(GITHUB_PASS) -t $(PROJ_NAME) --no-cache .
 	chmod 775 ./download.sh
 	./download.sh
 
