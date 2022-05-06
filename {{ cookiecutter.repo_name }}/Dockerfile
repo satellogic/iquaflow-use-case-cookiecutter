@@ -49,7 +49,11 @@ ARG GITHUB_USER=NO_NEEDED
 ARG GITHUB_PASS=NO_NEEDED
 
 # Install IQF in the project# git clone https://github.com/satellogic/iquaflow.git && \
-RUN git clone https://github.com/satellogic/iquaflow.git; \
+RUN if [ "$GITHUB_USER" = "NO_NEEDED" ]; then \
+        git clone https://github.com/satellogic/iquaflow.git; \
+    else \
+        git clone https://${GITHUB_USER}:${GITHUB_PASS}@github.com/satellogic/iquaflow.git; \
+    fi && \
     chmod 775 -R . && \
     cd iquaflow && \
     pip3 install . && \
