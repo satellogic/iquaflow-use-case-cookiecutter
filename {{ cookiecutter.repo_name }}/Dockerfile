@@ -45,6 +45,9 @@ COPY ./requirements.txt ./requirements.txt
 
 RUN pip install -r requirements.txt
 
+ARG GITHUB_USER=NO_NEEDED
+ARG GITHUB_PASS=NO_NEEDED
+
 # Install IQF in the project# git clone https://github.com/satellogic/iquaflow.git && \
 RUN git clone https://github.com/satellogic/iquaflow.git; \
     chmod 775 -R . && \

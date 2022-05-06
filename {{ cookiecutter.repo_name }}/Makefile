@@ -14,6 +14,14 @@ ifndef MLF_PORT
 	MLF_PORT=5000
 endif
 
+ifndef GITHUB_USER
+	GITHUB_USER=NO_NEEDED
+endif
+
+ifndef GITHUB_PASS
+	GITHUB_PASS=NO_NEEDED
+endif
+
 help:
 	@echo "build -- builds the docker image"
 	@echo "dockershell -- raises an interactive shell docker"
