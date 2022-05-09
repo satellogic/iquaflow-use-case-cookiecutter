@@ -1,3 +1,3 @@
-from iq_tool_box.datasets import DSModifier
-from iq_tool_box.metrics import Metric
-from iq_tool_box.experiments import ExperimentInfo
+from iquaflow.datasets import DSModifier
+from iquaflow.metrics import Metric
+from iquaflow.experiments import ExperimentInfo

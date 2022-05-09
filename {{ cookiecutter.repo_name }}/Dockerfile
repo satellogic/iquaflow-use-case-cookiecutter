@@ -46,7 +46,7 @@ COPY ./requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
 # Install IQF in the project# git clone https://github.com/satellogic/iquaflow.git && \
-RUN git clone https://github.com/satellogic/iquaflow.git; \
+RUN git clone https://github.com/satellogic/iquaflow.git \
     chmod 775 -R . && \
     cd iquaflow && \
     pip3 install . && \

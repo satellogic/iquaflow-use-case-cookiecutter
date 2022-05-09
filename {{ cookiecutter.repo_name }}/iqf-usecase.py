@@ -1,11 +1,11 @@
 import os
 
-from iq_tool_box.datasets import DSWrapper
-from iq_tool_box.experiments import ExperimentInfo, ExperimentSetup
-from iq_tool_box.experiments.task_execution import PythonScriptTaskExecution
+from iquaflow.datasets import DSWrapper
+from iquaflow.experiments import ExperimentInfo, ExperimentSetup
+from iquaflow.experiments.task_execution import PythonScriptTaskExecution
 
-# from iq_tool_box.datasets import DSModifier, DSWrapper,DSModifier_jpg
-# from iq_tool_box.metrics import ???
+# from iquaflow.datasets import DSModifier, DSWrapper,DSModifier_jpg
+# from iquaflow.metrics import ???
 # from custom_iqf import CustomModifier, CustomMetric
 
 #Define name of IQF experiment
