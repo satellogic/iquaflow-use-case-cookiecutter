@@ -27,7 +27,7 @@ build:
 	./download.sh
 
 dockershell:
-	docker run --rm --name $(CONTAINER_NAME) --gpus all \
+	docker run --rm --privileged -it --shm-size=32gb --name $(CONTAINER_NAME) --gpus all \
 	-p 9197:9197 \
 	-v $(shell pwd):/iqf -v $(DS_VOLUME):/ds_volume \
 	-it $(PROJ_NAME)
