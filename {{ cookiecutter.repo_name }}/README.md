@@ -46,8 +46,8 @@ make container
         ```bash
         make mlf
         ```
-        Then access it from your browser by using this address `localhost:5055`.
-        Similar to the notebook server, you might need to make a tunnel.
+        - Then access it from your browser by using this address `localhost:5055`.
+        - Similar to the notebook server, you might need to make a tunnel.
 
     * To raise an interactive shell from our running container. (\*)
 
