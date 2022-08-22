@@ -3,7 +3,7 @@ CONTAINER_NAME="${PROJ_NAME}-${USER}"
 
 
 ifndef DS_VOLUME
-	DS_VOLUME=/scratch
+	DS_VOLUME=/Nas
 endif
 
 ifndef GEN_PORT
