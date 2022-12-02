@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 ## To reproduce the experiments:
 
-1. `git clone git@publicgitlab.satellogic.com:iqf/{{ cookiecutter.repo_name }}`
+1. `git clone git@github.com:satellogic/{{ cookiecutter.repo_name }}`
 2. `cd {{ cookiecutter.repo_name }}`
 3. Then build the docker image with `make build`.(\*\*\*) This will also download the dataset and weights
 4. In order to execute the experiments:
