@@ -46,11 +46,7 @@ COPY ./requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
 # Install IQF in the project# git clone https://github.com/satellogic/iquaflow.git && \
-RUN git clone https://github.com/satellogic/iquaflow.git \
-    chmod 775 -R . && \
-    cd iquaflow && \
-    pip3 install . && \
-    cd .. && rm -rf iquaflow
+RUN pip install iquaflow
 
 # Force a suitable torch version given your hardware
 # RUN pip3 install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
